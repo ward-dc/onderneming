@@ -32,19 +32,19 @@ export default function AdminNav() {
 	}, [isProfileMenuOpen]);
 
 	return (
-		<nav class="bg-white border-b border-gray-200 sticky top-0 z-30 w-full">
-			<div class="px-3 py-3 lg:px-5 lg:pl-3">
-				<div class="flex items-center justify-between">
-					<div class="flex items-center justify-start">
+		<nav className="bg-white border-b border-gray-200 sticky top-0 z-30 w-full">
+			<div className="px-3 py-3 lg:px-5 lg:pl-3">
+				<div className="flex items-center justify-between">
+					<div className="flex items-center justify-start">
 						<button
 							id="toggleSidebarMobile"
 							aria-expanded="true"
 							aria-controls="sidebar"
-							class="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
+							className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
 						>
 							<svg
 								id="toggleSidebarMobileHamburger"
-								class="w-6 h-6"
+								className="w-6 h-6"
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ export default function AdminNav() {
 							</svg>
 							<svg
 								id="toggleSidebarMobileClose"
-								class="w-6 h-6 hidden"
+								className="w-6 h-6 hidden"
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg"
@@ -71,18 +71,18 @@ export default function AdminNav() {
 						</button>
 						<a
 							href="/"
-							class="text-xl font-bold flex items-center lg:ml-2.5"
+							className="text-xl font-bold flex items-center lg:ml-2.5"
 						>
 							<Image src="/logo.png" height={50} width={161} />
 						</a>
-						<form action="#" method="GET" class="hidden lg:block lg:pl-32">
-							<label for="topbar-search" class="sr-only">
+						<form action="#" method="GET" className="hidden lg:block lg:pl-32">
+							<label for="topbar-search" className="sr-only">
 								Search
 							</label>
-							<div class="mt-1 relative lg:w-64">
-								<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+							<div className="mt-1 relative lg:w-64">
+								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 									<svg
-										class="w-5 h-5 text-gray-500"
+										className="w-5 h-5 text-gray-500"
 										fill="currentColor"
 										viewBox="0 0 20 20"
 										xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ export default function AdminNav() {
 									type="text"
 									name="email"
 									id="topbar-search"
-									class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
+									className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
 									placeholder="Search"
 								/>
 							</div>
@@ -119,13 +119,13 @@ export default function AdminNav() {
 						</div>
 					)}
                                         {status == "unauthenticated" && (
-						<ul class="flex items-center hidden space-x-8 lg:flex">
+						<ul className="flex items-center hidden space-x-8 lg:flex">
 							<li>
 								<button
 									onClick={() => setLoginPopup(true)}
 									aria-label="Sign in"
 									title="Sign in"
-									class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
 								>
 									Sign in
 								</button>
@@ -133,7 +133,7 @@ export default function AdminNav() {
 							<li>
 								<button
 									onClick={() => setLoginPopup(true)}
-									class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+									className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
 									aria-label="Sign up"
 									title="Sign up"
 								>
@@ -144,7 +144,7 @@ export default function AdminNav() {
 					)}
 					{session && (
 						<ul
-							class="flex items-center hidden space-x-4 lg:flex cursor-pointer"
+							className="flex items-center hidden space-x-4 lg:flex cursor-pointer"
 							onClick={() => setisProfileMenuOpen(!isProfileMenuOpen)}
 						>
 							<li>

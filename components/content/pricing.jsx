@@ -8,9 +8,9 @@ const PricingItem = ({ price, children, itemName, list }) => {
 							<p className="text-sm font-bold tracking-wider uppercase">
 								{itemName}
 							</p>
-							<div class="">
+							<div className="">
 								<p className="text-5xl font-extrabold">{price}</p>
-								<p class="text-sm text-gray-500">(vanaf)</p>
+								<p className="text-sm text-gray-500">(vanaf)</p>
 							</div>
 						</div>
 						<div className="flex items-center justify-center w-24 h-24 rounded-full bg-indigo-50">

@@ -11,11 +11,11 @@ export default function Dashboard({ children }) {
                                 <AdminSidebar />
                                 <div
                                         id="main-content"
-                                        class="h-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+                                        className="h-full bg-gray-50 relative overflow-y-auto lg:ml-64"
                                 >
                                         <main>
-                                                <div class="pt-6 px-4">
-                                                        <div class="w-full grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-4">
+                                                <div className="pt-6 px-4">
+                                                        <div className="w-full grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-4">
                                                                 <Balance />
                                                                 <MainChart />
                                                         </div>
