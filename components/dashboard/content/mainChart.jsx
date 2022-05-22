@@ -52,7 +52,9 @@ export default function MainChart() {
 				</div>
 				<div className="flex items-center justify-end flex-1 text-green-500 text-base font-bold">
 					12.5%
-					<FontAwesomeIcon icon={faArrowUp} className="ml-1" />
+					<div className="h-5 w-5">
+						<FontAwesomeIcon icon={faArrowUp} className="ml-1" />
+					</div>
 				</div>
 			</div>
 			<Chart options={options} series={series} type="area" />

@@ -74,7 +74,7 @@ export const Step = () => {
                     <p className="text-xl font-semibold sm:text-base">Heart attack</p>
                     <p className="text-sm text-gray-700">
                       A flower in my garden, a mystery in my panties. Heart attack
-                      never stopped old Big Bear. I didn't even know we were calling
+                      never stopped old Big Bear. I didn&apos;t even know we were calling
                       him Big Bear.
                     </p>
                   </div>

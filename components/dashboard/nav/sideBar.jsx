@@ -15,7 +15,9 @@ const Item = ({ icon, notis, children, link }) => {
 		<li>
 			<Link href={link} target="_blank">
 				<div className="text-base text-gray-800 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group cursor-pointer">
-					<FontAwesomeIcon icon={icon} size="lg" className="text-gray-800" />
+					<div className="h-5 w-5">
+						<FontAwesomeIcon icon={icon} size="lg" className="text-gray-800" />
+					</div>
 					<span className="ml-3 flex-1 whitespace-nowrap font-medium">
 						{children}
 					</span>

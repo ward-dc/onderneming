@@ -1,24 +1,22 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
 
 const InfoItem = ({ children, src }) => {
 	return (
-		<a href="/" aria-label="View Item">
+		<Link href="/" aria-label="View Item" passHref>
 			<figure className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-				<img
-					className="object-cover w-full h-56 md:h-64 xl:h-80"
-					src={src}
-					alt=""
-				/>
+				<div className="w-full h-56 md:h-64 xl:h-80">
+					<Image src={src} layout="fill" alt="" objectFit="cover" />
+				</div>
 				<div className="absolute h-full inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-80">
 					<figcaption className=" tracking-wide text-white">
 						<h3 className="text-lg font-medium mb-2">{children}</h3>
 						<h3 className="text-sm ">{children}</h3>
 					</figcaption>
-					
 				</div>
 			</figure>
-		</a>
+		</Link>
 	);
 };
 
@@ -48,20 +46,23 @@ export const BasicInfo = () => {
 					<InfoItem src="/server.jpg">Al uw applicaties hosten.</InfoItem>
 				</motion.div>
 				<div className="text-center">
-					<a
+					<Link
 						href="/"
 						aria-label=""
-						className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+						passHref
+						
 					>
-						See more
-						<svg
-							className="inline-block w-3 ml-2"
-							fill="currentColor"
-							viewBox="0 0 12 12"
-						>
-							<path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-						</svg>
-					</a>
+						<div className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 cursor-pointer">
+							See more
+							<svg
+								className="inline-block w-3 ml-2"
+								fill="currentColor"
+								viewBox="0 0 12 12"
+							>
+								<path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
+							</svg>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</section>

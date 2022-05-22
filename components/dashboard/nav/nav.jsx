@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import logo from "../../../public/logo.png"
 
 
 export default function AdminNav() {
@@ -50,9 +51,9 @@ export default function AdminNav() {
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<path
-									fill-rule="evenodd"
+									fillRule="evenodd"
 									d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-									clip-rule="evenodd"
+									clipRule="evenodd"
 								></path>
 							</svg>
 							<svg
@@ -63,20 +64,21 @@ export default function AdminNav() {
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<path
-									fill-rule="evenodd"
+									fillRule="evenodd"
 									d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-									clip-rule="evenodd"
+									clipRule="evenodd"
 								></path>
 							</svg>
 						</button>
-						<a
+						<Link
 							href="/"
-							className="text-xl font-bold flex items-center lg:ml-2.5"
 						>
-							<Image src="/logo.png" height={50} width={161} />
-						</a>
+							<div className="text-xl font-bold flex items-center lg:ml-2.5 cursor-pointer">
+								<Image src={logo} height={50} width={161} />
+							</div>
+						</Link>
 						<form action="#" method="GET" className="hidden lg:block lg:pl-32">
-							<label for="topbar-search" className="sr-only">
+							<label htmlFor="" id="topbar-search" className="sr-only">
 								Search
 							</label>
 							<div className="mt-1 relative lg:w-64">
@@ -88,9 +90,9 @@ export default function AdminNav() {
 										xmlns="http://www.w3.org/2000/svg"
 									>
 										<path
-											fill-rule="evenodd"
+											fillRule="evenodd"
 											d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-											clip-rule="evenodd"
+											clipRule="evenodd"
 										></path>
 									</svg>
 								</div>
@@ -151,8 +153,10 @@ export default function AdminNav() {
 								<p className="font-medium text-gray-900">{session.user.name}</p>
 							</li>
 							<li className="flex items-center">
-								<img
-									className="h-10 w-10 rounded-full shadow-md"
+								<Image
+								height={40}
+								width={40}
+									className="rounded-full shadow-md"
 									src={session.user.image}
 								/>
 								<span className="border-4 border-t-gray-400 border-x-transparent border-b-transparent mt-1 ml-1 h-0 w-0"></span>
@@ -173,17 +177,17 @@ export default function AdminNav() {
 									</Link>
 								</li>
 								<li>
-									<a className="mb-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
+									<Link className="mb-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
 										<span>Settings</span>
-									</a>
+									</Link>
 								</li>
 								<li className="border-t-2">
-									<a
+									<Link
 										className="mt-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block"
 										onClick={() => signOut()}
 									>
 										<span className="text-red-600">Afmelden</span>
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>

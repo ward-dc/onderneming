@@ -2,6 +2,7 @@ import Balance from "../../components/dashboard/content/balance";
 import MainChart from "../../components/dashboard/content/mainChart";
 import AdminNav from "../../components/dashboard/nav/nav";
 import AdminSidebar from "../../components/dashboard/nav/sideBar";
+import Link from "next/link";
 
 export default function Dashboard({ children }) {
 	return (

@@ -1,15 +1,19 @@
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import laptop from '../../public/laptop.png'
+
 export const Header = () => {
 	return (
 		<section>
 			<div className="relative flex flex-col-reverse py-3 mx-auto lg:block lg:flex-col lg:pb-32 lg:pt-16 xl:pb-48 xl:pt-42 md:px-8 sm:max-w-xl md:max-w-full bg-blue-50">
 				<div className="z-0 flex justify-center h-full -mx-4 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
-					<img
-						src="/laptop.png"
-						className="object-cover object-right w-full h-auto lg:w-auto lg:h-full"
-						alt=""
-					/>
+					
+						<div  className="object-cover object-right w-full h-auto 2xl:m-36">
+							<Image src={laptop} priority />
+						</div>
+					
 				</div>
 				<div className="relative flex justify-end max-w-xl mx-auto xl:pr-32 lg:max-w-screen-xl">
 					<div className="mb-16 lg:pr-5 lg:max-w-lg lg:mb-0">
@@ -24,7 +28,13 @@ export const Header = () => {
 								<span className="inline-block text-deep-purple-accent-400">
 									<Typewriter
 										options={{
-											strings: ["designen", "creëren", "hosten", "onderhouden","beveiligen"],
+											strings: [
+												"designen",
+												"creëren",
+												"hosten",
+												"onderhouden",
+												"beveiligen",
+											],
 											autoStart: true,
 											loop: true,
 										}}
@@ -40,19 +50,19 @@ export const Header = () => {
 						</div>
 						<form>
 							<div className="flex flex-col md:flex-row">
-								<a
-									href="#pricing"
-									className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-								>
-									Bekijk onze prijzen
-								</a>
-								<a
+								<Link href="#pricing">
+									<p className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none cursor-pointer">
+										Bekijk onze prijzen
+									</p>
+								</Link>
+								<Link
 									href="/"
 									aria-label=""
 									className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
 								>
-									Meer info
-								</a>
+									
+									<p className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 cursor-pointer">Meer info</p>
+								</Link>
 							</div>
 						</form>
 					</div>

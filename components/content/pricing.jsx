@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const PricingItem = ({ price, children, itemName, list }) => {
 	return (
 		<>
@@ -60,7 +62,7 @@ const PricingItem = ({ price, children, itemName, list }) => {
 						<ul className="space-y-2">
 							{list.map((item) => {
 								return (
-									<li className="flex items-center">
+									<li key={item.key} className="flex items-center">
 										<div className="mr-2">
 											<svg
 												className="w-4 h-4 text-deep-purple-accent-400"
@@ -92,12 +94,12 @@ const PricingItem = ({ price, children, itemName, list }) => {
 					</div>
 				</div>
 				<div>
-					<a
+					<Link
 						href="/"
-						className="inline-flex items-center justify-center w-full h-12 px-6 mb-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+						
 					>
-						Get started
-					</a>
+						<p className="inline-flex items-center justify-center w-full h-12 px-6 mb-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none cursor-pointer">Get started</p>
+					</Link>
 					<p className="text-sm text-gray-600">
 						Alle websites zonder hosting zijn eenmallige betalingen, geen
 						maandelijkse kosten.
@@ -149,9 +151,9 @@ export const Pricing = () => {
 					<p className="text-base text-gray-700 md:text-lg">
 						Dit zijn veel gevraagde soorten websites. Vindt je niet wat je
 						zoekt? Geen probleem,{" "}
-						<a className="text-deep-purple-accent-400 hover:underline" href="">
+						<Link className="text-deep-purple-accent-400 hover:underline" href="">
 							contacteer ons
-						</a>{" "}
+						</Link>{" "}
 						en we maken een offerte op voor jouw website.
 					</p>
 				</div>

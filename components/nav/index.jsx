@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import NewWindow from "react-new-window";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { MobileNavItem, NavItem } from "./item";
 
 export const Nav = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,55 +33,19 @@ export const Nav = () => {
 			<div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 				<div className="relative flex items-center justify-between">
 					<nav className="flex items-center">
-						<a
+						<Link
 							href="/"
 							aria-label="Go Online"
 							title="Go Online"
 							className="inline-flex items-center mr-8"
 						>
 							<Image src="/logo.png" height={50} width={161} />
-						</a>
-						<ul className="flex items-center hidden space-x-8 lg:flex">
-							<li>
-								<a
-									href="/"
-									aria-label="Our product"
-									title="Our product"
-									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-								>
-									Product
-								</a>
-							</li>
-							<li>
-								<a
-									href="/"
-									aria-label="Our product"
-									title="Our product"
-									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-								>
-									Features
-								</a>
-							</li>
-							<li>
-								<a
-									href="/"
-									aria-label="Product pricing"
-									title="Product pricing"
-									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-								>
-									Pricing
-								</a>
-							</li>
-							<li>
-								<a
-									href="/"
-									aria-label="About us"
-									title="About us"
-									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-								>
-									About us
-								</a>
-							</li>
+						</Link>
+						<ul className="flex items-center hidden ml-10 space-x-8 lg:flex">
+							<NavItem text="Product" href="/" />
+							<NavItem text="Features" href="/" />
+							<NavItem text="Pricing" href="/" />
+							<NavItem text="About us" href="/" />
 						</ul>
 					</nav>
 
@@ -135,7 +100,9 @@ export const Nav = () => {
 								<p className="font-medium text-gray-900">{session.user.name}</p>
 							</li>
 							<li className="flex items-center">
-								<img
+								<Image
+									height={40}
+									width={40}
 									className="h-10 w-10 rounded-full shadow-md"
 									src={session.user.image}
 								/>
@@ -157,17 +124,18 @@ export const Nav = () => {
 									</Link>
 								</li>
 								<li>
-									<a className="mb-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
-										<span>Settings</span>
-									</a>
+									<Link href="/">
+										<p className="mb-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
+											Settings
+										</p>
+									</Link>
 								</li>
 								<li className="border-t-2">
-									<a
-										className="mt-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block"
-										onClick={() => signOut()}
-									>
-										<span className="text-red-600">Afmelden</span>
-									</a>
+									<div onClick={() => signOut()}>
+										<p className="text-red-600 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
+											Afmelden
+										</p>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -200,14 +168,14 @@ export const Nav = () => {
 								<div className="p-5 bg-white border rounded shadow-sm">
 									<div className="flex items-center justify-between mb-4">
 										<div>
-											<a
+											<Link
 												href="/"
 												aria-label="Go Online"
 												title="Go Online"
 												className="inline-flex items-center"
 											>
 												<Image src="/logo.png" height={50} width={161} />
-											</a>
+											</Link>
 										</div>
 										<div>
 											<button
@@ -227,70 +195,27 @@ export const Nav = () => {
 									</div>
 									<nav>
 										<ul className="space-y-4">
-											<li>
-												<a
-													href="/"
-													aria-label="Our product"
-													title="Our product"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													Product
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													aria-label="Our product"
-													title="Our product"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													Features
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													aria-label="Product pricing"
-													title="Product pricing"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													Pricing
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													aria-label="About us"
-													title="About us"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													About us
-												</a>
-											</li>
+											<MobileNavItem text="Product" href="/" />
+											<MobileNavItem text="Features" href="/" />
+											<MobileNavItem text="Pricing" href="/" />
+											<MobileNavItem text="About us" href="/" />
 											{status == "unauthenticated" && (
-												<>
-													<li>
-														<a
-															href="/"
-															aria-label="Sign in"
-															title="Sign in"
-															className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-														>
-															Sign in
-														</a>
+												<div className="flex justify-around text-center">
+													<li className="w-5/12 ">
+														<Link href="/" aria-label="Sign in" title="Sign in">
+															<p className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-deep-purple-accent-400 transition duration-200 rounded shadow-md border-deep-purple-accent-400 border-2  hover:border-deep-purple-accent-700 hover:text-deep-purple-accent-400 focus:shadow-outline focus:outline-none cursor-pointer">
+																Sign in
+															</p>
+														</Link>
 													</li>
-													<li>
-														<a
-															href="/"
-															className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-															aria-label="Sign up"
-															title="Sign up"
-														>
-															Sign up
-														</a>
+													<li className="w-5/12">
+														<Link href="/" aria-label="Sign up" title="Sign up">
+															<p className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none cursor-pointer">
+																Sign up
+															</p>
+														</Link>
 													</li>
-													)
-												</>
+												</div>
 											)}
 										</ul>
 									</nav>

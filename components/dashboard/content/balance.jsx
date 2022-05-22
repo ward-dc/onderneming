@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Balance() {
 	return (
 		<div className="flex flex-col gap-4 xl:col-span-2">
@@ -11,12 +13,12 @@ export default function Balance() {
                                                 
 					</div>
                                         <div className="flex-shrink-0 ml-auto">
-						<a
+						<Link
 							href="#"
-							className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2"
+							
 						>
-							Deposit
-						</a>
+							<span className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2 cursor-pointer">Deposit</span>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -31,12 +33,12 @@ export default function Balance() {
 						</span>
 					</div>
 					<div className="flex-shrink-0">
-						<a
+						<Link
 							href="#"
 							className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2"
 						>
-							View all
-						</a>
+							<span className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2 cursor-pointer">View all</span>
+						</Link>
 					</div>
 				</div>
 

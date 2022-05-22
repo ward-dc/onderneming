@@ -11,18 +11,20 @@ const UniekItem = ({ children, title, list, link, icon }) => {
 	return (
 		<div>
 			<div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-				<FontAwesomeIcon
-					size="2x"
-					icon={icon}
-					className="text-deep-purple-accent-400"
-				/>
+				<div className="h-7 w-7">
+					<FontAwesomeIcon
+						size="2x"
+						icon={icon}
+						className="text-deep-purple-accent-400"
+					/>
+				</div>
 			</div>
 			<h6 className="mb-2 font-semibold leading-5">{title}</h6>
 			<p className="mb-3 text-sm text-gray-900">{children}</p>
 			<ul className="mb-4 -ml-1 space-y-2">
 				{list?.map((item) => {
 					return (
-						<li className="flex items-start">
+						<li key={item.key} className="flex items-start">
 							<span className="mr-1">
 								<svg
 									className="w-5 h-5 mt-px text-deep-purple-accent-400"
@@ -81,7 +83,7 @@ export const WhatWeDo = () => {
 					icon={faServer}
 					list={["Snel", "Geen pagina reloads", "Betere gebruikerservaring"]}
 				>
-					Een server-side gerenderde applicatie zorgt ervoor dat pagina's
+					Een server-side gerenderde applicatie zorgt ervoor dat pagina&apos;s
 					sneller kunnen worden geladen, wat de gebruikerservaring verbetert.
 				</UniekItem>
 				<UniekItem
