@@ -10,14 +10,12 @@ export default function Balance() {
 							€82,21
 						</span>
 						<h3 className="text-base font-normal text-gray-500">Balance</h3>
-                                                
 					</div>
-                                        <div className="flex-shrink-0 ml-auto">
-						<Link
-							href="#"
-							
-						>
-							<span className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2 cursor-pointer">Deposit</span>
+					<div className="flex-shrink-0 ml-auto">
+						<Link href="#">
+							<span className="text-sm font-medium text-deep-purple-accent-400 hover:bg-gray-100 rounded-lg p-2 cursor-pointer">
+								Deposit
+							</span>
 						</Link>
 					</div>
 				</div>
@@ -33,11 +31,10 @@ export default function Balance() {
 						</span>
 					</div>
 					<div className="flex-shrink-0">
-						<Link
-							href="#"
-							className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2"
-						>
-							<span className="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2 cursor-pointer">View all</span>
+						<Link href="#">
+							<span className="text-sm font-medium text-deep-purple-accent-400 hover:bg-gray-100 rounded-lg p-2 cursor-pointer">
+								View all
+							</span>
 						</Link>
 					</div>
 				</div>

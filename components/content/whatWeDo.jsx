@@ -94,7 +94,7 @@ export const WhatWeDo = () => {
 						"Automatisch inbreuk detectie systeem",
 					]}
 				>
-					Elke applicatie die wij maken is bveveiligd met verschillende
+					Elke applicatie die wij maken is beveiligd met verschillende
 					beveiligingstechnieken
 				</UniekItem>
 			</div>

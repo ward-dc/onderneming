@@ -101,7 +101,7 @@ const PricingItem = ({ price, children, itemName, list }) => {
 						<p className="inline-flex items-center justify-center w-full h-12 px-6 mb-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none cursor-pointer">Get started</p>
 					</Link>
 					<p className="text-sm text-gray-600">
-						Alle websites zonder hosting zijn eenmallige betalingen, geen
+						Alle websites zonder hosting zijn eenmalige betalingen, geen
 						maandelijkse kosten.
 					</p>
 				</div>
@@ -149,7 +149,7 @@ export const Pricing = () => {
 						kost zo een website dan?
 					</h2>
 					<p className="text-base text-gray-700 md:text-lg">
-						Dit zijn veel gevraagde soorten websites. Vindt je niet wat je
+						Dit zijn veel gevraagde soorten websites. Vind je niet wat je
 						zoekt? Geen probleem,{" "}
 						<Link className="text-deep-purple-accent-400 hover:underline" href="">
 							contacteer ons

@@ -1,17 +1,11 @@
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import logo from "../../../public/logo.png"
-
+import logo from "../../../public/logo.png";
 
 export default function AdminNav() {
-
-
-
-
-        
 	const { data: session, status } = useSession();
 
 	const [isProfileMenuOpen, setisProfileMenuOpen] = useState(false);
@@ -70,9 +64,7 @@ export default function AdminNav() {
 								></path>
 							</svg>
 						</button>
-						<Link
-							href="/"
-						>
+						<Link href="/">
 							<div className="text-xl font-bold flex items-center lg:ml-2.5 cursor-pointer">
 								<Image src={logo} height={50} width={161} />
 							</div>
@@ -120,7 +112,7 @@ export default function AdminNav() {
 							></motion.div>
 						</div>
 					)}
-                                        {status == "unauthenticated" && (
+					{status == "unauthenticated" && (
 						<ul className="flex items-center hidden space-x-8 lg:flex">
 							<li>
 								<button
@@ -154,8 +146,8 @@ export default function AdminNav() {
 							</li>
 							<li className="flex items-center">
 								<Image
-								height={40}
-								width={40}
+									height={40}
+									width={40}
 									className="rounded-full shadow-md"
 									src={session.user.image}
 								/>
@@ -177,22 +169,22 @@ export default function AdminNav() {
 									</Link>
 								</li>
 								<li>
-									<Link className="mb-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
-										<span>Settings</span>
+									<Link href="/">
+										<p className="mb-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
+											Settings
+										</p>
 									</Link>
 								</li>
 								<li className="border-t-2">
-									<Link
-										className="mt-1 hover:bg-gray-100 px-3 py-1 cursor-pointer block"
-										onClick={() => signOut()}
-									>
-										<span className="text-red-600">Afmelden</span>
-									</Link>
+									<div onClick={() => signOut()}>
+										<p className="text-red-600 hover:bg-gray-100 px-3 py-1 cursor-pointer block">
+											Afmelden
+										</p>
+									</div>
 								</li>
 							</ul>
 						</div>
 					)}
-                                        
 				</div>
 			</div>
 		</nav>

@@ -41,7 +41,7 @@ export const Header = () => {
 									/>
 								</span>
 								<br className="hidden md:block" />
-								uw ideaale applicatie
+								uw ideale applicatie
 							</h2>
 							<p className="text-base text-gray-700 md:text-lg">
 								Bij Go Online focusen wij op uw behoeftes. Daarom is elke

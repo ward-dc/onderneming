@@ -39,10 +39,10 @@ export const BasicInfo = () => {
 					transition={{ duration: 1 }}
 				>
 					<InfoItem src="/design.jpg">
-						Uw gepersonalizeerde website maken
+						Uw gepersonalizeerde website maken.
 					</InfoItem>
-					<InfoItem src="/design.jpg">Een backend API maken</InfoItem>
-					<InfoItem src="/security.jpg">Uw systeem onderhouden</InfoItem>
+					<InfoItem src="/design.jpg">Een backend API maken.</InfoItem>
+					<InfoItem src="/security.jpg">Uw systeem onderhouden.</InfoItem>
 					<InfoItem src="/server.jpg">Al uw applicaties hosten.</InfoItem>
 				</motion.div>
 				<div className="text-center">
